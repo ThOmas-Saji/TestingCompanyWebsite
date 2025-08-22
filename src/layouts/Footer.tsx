@@ -1,0 +1,145 @@
+import {
+  ArrowRight,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+} from 'lucide-react';
+import { Input } from '../components/ui/input';
+import { Button } from '../components/ui/button';
+
+export function Footer() {
+  return (
+    <footer id="contact" className="bg-zinc-900 py-20 border-t border-white/10">
+      <div className="max-w-7xl mx-auto px-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-5 uppercase tracking-wider">
+              YlogX
+            </h3>
+            <p className="text-zinc-400 leading-relaxed mb-8">
+              Empowering enterprises through AI-driven digital transformation.
+              We deliver cutting-edge solutions that drive innovation and
+              sustainable growth.
+            </p>
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
+              >
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">
+              Information
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="#about"
+                  className="text-zinc-400 hover:text-emerald-400 transition-colors"
+                >
+                  About Company
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#team"
+                  className="text-zinc-400 hover:text-emerald-400 transition-colors"
+                >
+                  Career
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#case-studies"
+                  className="text-zinc-400 hover:text-emerald-400 transition-colors"
+                >
+                  Case Study
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  className="text-zinc-400 hover:text-emerald-400 transition-colors"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#blog"
+                  className="text-zinc-400 hover:text-emerald-400 transition-colors"
+                >
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">
+              Contact Us
+            </h4>
+            <div className="space-y-3 text-zinc-400">
+              <p>Kanayannur, Kerala, India</p>
+              <p>+91 (555) 123-4567</p>
+              <p>vivek@ylogx.io</p>
+              <p>ganapathy@ylogx.io</p>
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">
+              Newsletter
+            </h4>
+            <p className="text-zinc-400 mb-5">Enter your email</p>
+            <div className="flex mb-4">
+              <Input
+                type="email"
+                placeholder="Your email address"
+                className="bg-white/5 border-white/10 text-white placeholder:text-zinc-500 rounded-r-none"
+              />
+              <Button className="bg-emerald-500 hover:bg-emerald-600 rounded-l-none px-5">
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+            </div>
+            <label className="flex items-start gap-3 text-xs text-zinc-400">
+              <input type="checkbox" className="mt-0.5" />
+              I'm okay with getting emails and having that activity tracked to
+              improve my experience.
+            </label>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-white/10 text-center text-zinc-400">
+          <p>
+            © 2025 YlogX. All rights reserved. Empowering enterprises through
+            AI-driven digital transformation.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
