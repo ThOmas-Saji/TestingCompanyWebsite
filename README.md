@@ -35,17 +35,20 @@ src/
 ## 🛠️ Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <repository-url>
    cd CompanyWebsite
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -58,24 +61,28 @@ src/
 ## 🎨 Components
 
 ### Button Component
+
 - Multiple variants: primary, secondary, outline
 - Different sizes: sm, md, lg
 - Hover effects and transitions
 - Accessible with proper ARIA attributes
 
 ### Card Component
+
 - Flexible content display
 - Image and icon support
 - Hover animations
 - Multiple variants for different use cases
 
 ### SectionTitle Component
+
 - Badge, title, and subtitle support
 - Alignment options
 - Framer Motion animations
 - Responsive typography
 
 ### Accordion Component
+
 - Smooth expand/collapse animations
 - Multiple items support
 - Accessible keyboard navigation
@@ -84,6 +91,7 @@ src/
 ## 📱 Pages
 
 ### Home Page
+
 - Hero section with CTA buttons
 - Work process overview
 - Services preview
@@ -95,24 +103,28 @@ src/
 - Call-to-action
 
 ### Services Page
+
 - Comprehensive services list
 - Technology stack
 - Process explanation
 - Interactive service cards
 
 ### Blog Page
+
 - Category filtering
 - Blog post grid
 - Newsletter signup
 - Responsive layout
 
 ### Team Page
+
 - Team member profiles
 - Company statistics
 - Culture and values
 - Career opportunities
 
 ### Contact Page
+
 - Contact form with validation
 - Company information
 - FAQ section
@@ -128,16 +140,19 @@ src/
 ## 🎨 Design System
 
 ### Colors
+
 - **Primary**: Blue color palette (#0ea5e9)
 - **Gray**: Neutral grays for text and backgrounds
 - **Semantic**: Success, warning, and error colors
 
 ### Typography
+
 - **Font**: Inter (Google Fonts)
 - **Scale**: Responsive typography with Tailwind classes
 - **Hierarchy**: Clear heading and text hierarchy
 
 ### Spacing
+
 - **Consistent**: 4px base unit system
 - **Responsive**: Adaptive spacing for different screen sizes
 - **Components**: Predefined spacing classes
@@ -159,6 +174,7 @@ src/
 ## 🛠️ Development
 
 ### Available Scripts
+
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
@@ -167,6 +183,7 @@ src/
 - `npm run format` - Format code with Prettier
 
 ### Code Quality
+
 - **ESLint**: Code linting and error detection
 - **Prettier**: Code formatting
 - **TypeScript**: Type safety and better development experience
@@ -194,6 +211,7 @@ This project is licensed under the MIT License.
 ## 📞 Support
 
 For support and questions, please contact:
+
 - Email: hello@ylogx.com
 - Phone: +1 (555) 123-4567
 
