@@ -8,7 +8,6 @@ import { Blog } from './components/Blog';
 import { FAQ } from './components/FAQ';
 import { Team } from './components/Team';
 import { CTA } from './components/CTA';
-import { Footer } from '@/layouts/Footer';
 
 export default function HomePage() {
   return (
@@ -23,7 +22,6 @@ export default function HomePage() {
       <FAQ />
       <Team />
       <CTA />
-      <Footer />
     </div>
   );
 }
