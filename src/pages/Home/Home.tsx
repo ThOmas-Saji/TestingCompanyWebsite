@@ -12,7 +12,7 @@ import { Footer } from '@/layouts/Footer';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-zinc-900 text-white overflow-x-hidden">
+    <div className="min-h-screen bg-white dark:bg-zinc-900 text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300">
       <Header />
       <Hero />
       <WorkProcess />

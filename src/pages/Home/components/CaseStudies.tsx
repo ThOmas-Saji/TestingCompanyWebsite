@@ -15,17 +15,20 @@ export function CaseStudies() {
   ];
 
   return (
-    <section id="case-studies" className="py-32 bg-zinc-900">
+    <section
+      id="case-studies"
+      className="py-32 bg-white dark:bg-zinc-900 transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div>
             <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-5">
               Case Studies
             </div>
-            <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-8 text-white">
+            <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-8 text-gray-900 dark:text-white">
               Proven Results
             </h2>
-            <p className="text-lg text-zinc-400 leading-relaxed mb-12 max-w-2xl">
+            <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed mb-12 max-w-2xl">
               Real-world success stories demonstrating the transformative impact
               of our AI and data solutions across industries and business
               functions.
@@ -35,12 +38,14 @@ export function CaseStudies() {
               {results.map((result, index) => (
                 <div
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/30"
+                  className="bg-gray-100/80 dark:bg-white/5 backdrop-blur-sm border border-gray-200/50 dark:border-white/10 rounded-3xl p-8 text-center transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-500/20 hover:border-purple-500/30"
                 >
                   <div className="text-5xl font-bold text-emerald-400 mb-3">
                     {result.number}
                   </div>
-                  <p className="text-zinc-400">{result.description}</p>
+                  <p className="text-gray-600 dark:text-zinc-400">
+                    {result.description}
+                  </p>
                 </div>
               ))}
             </div>
