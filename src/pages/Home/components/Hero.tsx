@@ -11,14 +11,14 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-zinc-900 relative overflow-hidden pt-32 pb-16"
+      className="min-h-screen flex items-center bg-gray-50 dark:bg-zinc-900 relative overflow-hidden pt-32 pb-16 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <div className="z-10">
-          <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-white">
+          <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-8 text-gray-900 dark:text-white">
             AI-Driven Digital Transformation
           </h1>
-          <p className="text-lg text-zinc-400 leading-relaxed mb-10 max-w-lg">
+          <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed mb-10 max-w-lg">
             Empowering enterprises with cutting-edge artificial intelligence,
             advanced data science, and intelligent automation solutions to drive
             innovation, optimize operations, and accelerate sustainable growth.

@@ -11,12 +11,12 @@ export function CTA() {
 
   return (
     <section className="mx-10 my-20">
-      <div className="bg-zinc-100 text-zinc-900 rounded-[40px] py-20 px-16 text-center relative overflow-hidden">
+      <div className="bg-gray-100 dark:bg-zinc-100 text-gray-900 dark:text-zinc-900 rounded-[40px] py-20 px-16 text-center relative overflow-hidden transition-colors duration-300">
         <div className="relative z-10">
           <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-8">
             Let's make something great together
           </h2>
-          <p className="text-lg text-zinc-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-600 dark:text-zinc-600 mb-10 max-w-2xl mx-auto">
             Ready to transform your business with AI? Get in touch with our
             experts to start your digital transformation journey.
           </p>

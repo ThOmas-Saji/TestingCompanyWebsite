@@ -17,15 +17,18 @@ export function Team() {
   ];
 
   return (
-    <section id="team" className="py-32 bg-zinc-900 text-center">
+    <section
+      id="team"
+      className="py-32 bg-gray-50 dark:bg-zinc-900 text-center transition-colors duration-300"
+    >
       <div className="max-w-7xl mx-auto px-10">
         <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-5">
           Team
         </div>
-        <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-white">
+        <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white">
           Leadership Team
         </h2>
-        <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-20">
+        <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-20">
           Our founding team brings decades of experience in data, AI, and
           digital transformation across industries, driving innovation and
           excellence.
@@ -39,10 +42,12 @@ export function Team() {
               >
                 {member.initials}
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
                 {member.name}
               </h4>
-              <div className="text-zinc-400 text-sm mb-5">{member.role}</div>
+              <div className="text-gray-600 dark:text-zinc-400 text-sm mb-5">
+                {member.role}
+              </div>
               <p className="text-zinc-400 leading-relaxed">{member.bio}</p>
             </div>
           ))}
