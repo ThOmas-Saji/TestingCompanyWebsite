@@ -17,8 +17,11 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@radix-ui/react-slot": "^1.2.3",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/react-router-dom": "^5.3.3",
     "autoprefixer": "^10.4.21",
+    "axios": "^1.11.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",

@@ -1,25 +1,116 @@
 import { ArrowRight } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
+interface BlogPost {
+  title: string;
+  description: string;
+  content?: string;
+  link: string;
+  thumbnail: string;
+  pubDate: string;
+  author: string;
+  guid?: string;
+  categories?: string[];
+}
+
+interface ApiResponse {
+  status: string;
+  feed: {
+    url: string;
+    title: string;
+    link: string;
+    author: string;
+    description: string;
+    image: string;
+  };
+  items: BlogPost[];
+}
 
 export function Blog() {
-  const articles = [
+  const [articles, setArticles] = useState([
     {
       category: 'AI Strategy',
       date: '02 May 2025',
       title: 'The Future of Generative AI in Enterprise',
       gradient: 'from-emerald-500 to-blue-500',
+      link: '#',
     },
     {
       category: 'Implementation',
       date: '02 May 2025',
       title: 'Building Scalable AI Solutions',
       gradient: 'from-yellow-300 to-cyan-400',
+      link: '#',
     },
-  ];
+  ]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await axios({
+          method: 'get',
+          url: `https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fmedium.com%2Ffeed%2Fylogx`,
+          params: {},
+        });
+
+        const data: ApiResponse = response.data;
+
+        if (
+          data &&
+          data.status === 'ok' &&
+          data.items &&
+          Array.isArray(data.items)
+        ) {
+          // Take only the first 2 blog posts and transform them
+          const transformedArticles = data.items
+            .slice(0, 2)
+            .map((post, index) => {
+              // Get first category or use default
+              const category =
+                post.categories && post.categories.length > 0
+                  ? post.categories[0]
+                  : 'Technology';
+
+              // Format date
+              const date = post.pubDate
+                ? new Date(post.pubDate).toLocaleDateString('en-US', {
+                    day: '2-digit',
+                    month: 'short',
+                    year: 'numeric',
+                  })
+                : 'Recent';
+
+              // Use predefined gradients
+              const gradients = [
+                'from-emerald-500 to-blue-500',
+                'from-yellow-300 to-cyan-400',
+              ];
+
+              return {
+                category: category,
+                date: date,
+                title: post.title || 'Untitled',
+                gradient: gradients[index] || gradients[0],
+                link: post.link || '#',
+              };
+            });
+
+          setArticles(transformedArticles);
+        }
+      } catch (err) {
+        console.error('Error fetching blogs:', err);
+        // Keep default articles if fetch fails
+      }
+    };
+
+    fetchBlogs();
+  }, []);
 
   return (
     <section
       id="blog"
-      className="py-32 bg-gray-100 dark:bg-zinc-900 transition-colors duration-300"
+      className="py-32 bg-white-900 dark:bg-zinc-900 transition-colors duration-300"
     >
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
@@ -35,7 +126,7 @@ export function Blog() {
               AI, data science, and digital transformation from our experts.
             </p>
             <a
-              href="#"
+              href="/blogs"
               className="inline-flex items-center gap-3 bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-600 transition-colors"
             >
               All Articles <ArrowRight className="w-4 h-4" />
@@ -72,7 +163,9 @@ export function Blog() {
                     {article.title}
                   </h3>
                   <a
-                    href="#"
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-emerald-400 font-semibold"
                   >
                     Read More <ArrowRight className="w-4 h-4" />

@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { ThemeToggle } from '@/components/ui/theme-toggle';
+import { useNavigate } from 'react-router-dom';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const navigate = useNavigate();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 100);
@@ -15,12 +17,30 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
+
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setSidebarOpen(false); // Close sidebar after navigation
+    // Clear any existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
+
+    navigate('/');
+    timeoutRef.current = setTimeout(() => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setSidebarOpen(false); // Close sidebar after navigation
+      }
+      timeoutRef.current = null;
+    }, 300);
   };
 
   const toggleSidebar = () => {
