@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 interface BlogPost {
   title: string;
@@ -125,12 +126,12 @@ export function Blog() {
               Stay updated with the latest trends, insights, and innovations in
               AI, data science, and digital transformation from our experts.
             </p>
-            <a
-              href="/blogs"
+            <Link
+              to="/blogs"
               className="inline-flex items-center gap-3 bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-600 transition-colors"
             >
               All Articles <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
