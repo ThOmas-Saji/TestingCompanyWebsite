@@ -40,17 +40,16 @@ export default function Blogs() {
     image: string;
   } | null>(null);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, []);
+
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
         setLoading(true);
         setError(null);
-
-        // Get API key from environment variable and decode it
-        const apiKey = import.meta.env.VITE_MEDIUM_API_KEY;
-        if (!apiKey) {
-          throw new Error('Medium API key not found.');
-        }
 
         const response = await axios({
           method: 'get',
