@@ -4,7 +4,7 @@ import { WorkProcess } from './components/WorkProcess';
 import { Services } from './components/Services';
 import { Features } from './components/Features';
 import { CaseStudies } from './components/CaseStudies';
-import { Blog } from './components/Blog';
+import { Blog } from '@/pages/Blog';
 import { FAQ } from './components/FAQ';
 import { Team } from './components/Team';
 import { CTA } from './components/CTA';
