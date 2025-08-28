@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Plus, Minus, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export function FAQ() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -55,12 +56,12 @@ export function FAQ() {
               transformation services, implementation process, and how we can
               help your business.
             </p>
-            <a
-              href="#contact"
+            <Link
+              to="#contact"
               className="inline-flex items-center gap-3 text-emerald-400 font-semibold hover:gap-4 transition-all"
             >
               Get in Touch <ArrowRight className="w-4 h-4" />
-            </a>
+            </Link>
           </div>
 
           <div className="space-y-0">

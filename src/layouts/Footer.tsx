@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Input } from '../components/ui/input';
 import { Button } from '../components/ui/button';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
@@ -26,30 +27,30 @@ export function Footer() {
               sustainable growth.
             </p>
             <div className="flex gap-4">
-              <a
-                href="#"
+              <Link
+                to="#"
                 className="w-10 h-10 bg-gray-200/50 dark:bg-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
               >
                 <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className="w-10 h-10 bg-gray-200/50 dark:bg-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
               >
                 <Twitter className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className="w-10 h-10 bg-gray-200/50 dark:bg-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="#"
                 className="w-10 h-10 bg-gray-200/50 dark:bg-white/5 rounded-full flex items-center justify-center text-gray-600 dark:text-zinc-400 hover:bg-emerald-500 hover:text-white transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -59,44 +60,44 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <a
-                  href="#about"
+                <Link
+                  to="#about"
                   className="text-gray-600 dark:text-zinc-400 hover:text-emerald-400 transition-colors"
                 >
                   About Company
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#team"
+                <Link
+                  to="#team"
                   className="text-gray-600 dark:text-zinc-400 hover:text-emerald-400 transition-colors"
                 >
                   Career
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#case-studies"
+                <Link
+                  to="#case-studies"
                   className="text-gray-600 dark:text-zinc-400 hover:text-emerald-400 transition-colors"
                 >
                   Case Study
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#services"
+                <Link
+                  to="#services"
                   className="text-gray-600 dark:text-zinc-400 hover:text-emerald-400 transition-colors"
                 >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#blog"
+                <Link
+                  to="#blog"
                   className="text-gray-600 dark:text-zinc-400 hover:text-emerald-400 transition-colors"
                 >
                   Blog
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
