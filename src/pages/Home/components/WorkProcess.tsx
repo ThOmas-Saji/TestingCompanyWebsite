@@ -46,7 +46,7 @@ export function WorkProcess() {
           Processing
         </div>
         <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white">
-          How we work
+          Co-Creating the Future With Yo
         </h2>
         <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed max-w-2xl mx-auto mb-20">
           Comprehensive AI and data solutions designed to transform your
