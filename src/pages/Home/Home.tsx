@@ -8,7 +8,7 @@ import { FAQ } from './components/FAQ';
 import { Team } from './components/Team';
 import { CTA } from './components/CTA';
 import { Hero } from './components/Hero';
-import AIFlowchart from '@/components/bespoke';
+import AIFlowchart from './components/AIFlowchart';
 
 export default function HomePage() {
   return (
