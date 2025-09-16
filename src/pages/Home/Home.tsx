@@ -1,5 +1,4 @@
 import { Header } from '@/layouts/Header';
-import { Hero } from './components/Hero';
 import { WorkProcess } from './components/WorkProcess';
 import { Services } from './components/Services';
 import { Features } from './components/Features';
@@ -8,6 +7,8 @@ import { Blog } from '@/pages/Blog';
 import { FAQ } from './components/FAQ';
 import { Team } from './components/Team';
 import { CTA } from './components/CTA';
+import { Hero } from './components/Hero';
+import AIFlowchart from './components/AIFlowchart';
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Hero />
       <WorkProcess />
       <Services />
+      <AIFlowchart />
       <Features />
       <CaseStudies />
       <Blog />
