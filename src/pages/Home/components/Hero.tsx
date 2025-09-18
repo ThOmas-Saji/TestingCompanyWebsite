@@ -146,8 +146,7 @@ function AnimatedText() {
 
   return (
     <div className="space-y-2">
-      <motion.h1
-        className="font-bold leading-tight text-white"
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -156,7 +155,7 @@ function AnimatedText() {
           text="Transforming Businesses through"
           className="text-5xl lg:text-6xl font-bold leading-tight text-white"
         />
-      </motion.h1>
+      </motion.div>
 
       <div className="relative h-[6rem] lg:h-[7rem] xl:h-[8rem] overflow-hidden">
         <AnimatePresence mode="wait">
