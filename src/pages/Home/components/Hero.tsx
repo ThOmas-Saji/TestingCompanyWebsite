@@ -51,7 +51,7 @@ export function Hero() {
 
             {/* Description */}
             <motion.p
-              className="text-md lg:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto"
+              className="text-md lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}

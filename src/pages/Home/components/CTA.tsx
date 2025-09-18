@@ -16,7 +16,7 @@ export function CTA() {
           <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-8">
             Let's make something great together
           </h2>
-          <p className="text-lg text-gray-600 dark:text-zinc-600 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-zinc-600 mb-10 max-w-2xl mx-auto">
             Ready to transform your business with AI? Get in touch with our
             experts to start your digital transformation journey.
           </p>

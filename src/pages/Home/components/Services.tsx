@@ -17,13 +17,13 @@ export function Services() {
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
           <div>
-            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-5">
+            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-lg font-semibold uppercase tracking-wide mb-5">
               Services
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-10 text-gray-900 dark:text-white">
               Our full AI & Data services for you
             </h2>
-            <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">
+            <p className="text-xl text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">
               We are constantly rethinking the future by creating the next
               generation of AI products, platforms and solutions from a hybrid
               perspective.
@@ -47,7 +47,7 @@ export function Services() {
                     <span className="text-emerald-400 font-semibold">
                       {service.number}
                     </span>
-                    <span className="text-2xl lg:text-4xl font-bold text-gray-900 dark:text-white">
+                    <span className="text-4xl lg:text-4xl font-bold text-gray-900 dark:text-white">
                       {service.name}
                     </span>
                   </div>

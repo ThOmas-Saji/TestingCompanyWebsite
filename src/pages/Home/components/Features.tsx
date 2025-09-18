@@ -44,14 +44,14 @@ export function Features() {
           </div>
 
           <div>
-            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-5">
+            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-lg font-semibold uppercase tracking-wide mb-5">
               Solutions
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-10 text-gray-900 dark:text-white">
               Pre-built enterprise solutions our way.
             </h2>
-            <div className="mt-10">
-              <h4 className="text-emerald-400 text-sm font-semibold mb-4 uppercase tracking-wide">
+            <div className="mt-10 text-xl">
+              <h4 className="text-emerald-400 text-lg font-semibold mb-4 uppercase tracking-wide">
                 — Innovation
               </h4>
               <p className="text-gray-600 dark:text-zinc-400 leading-relaxed mb-5">
