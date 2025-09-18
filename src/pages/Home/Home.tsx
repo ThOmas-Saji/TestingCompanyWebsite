@@ -9,21 +9,49 @@ import { Team } from './components/Team';
 import { CTA } from './components/CTA';
 import { Hero } from './components/Hero';
 import AIFlowchart from './components/AIFlowchart';
+import ScrollReveal from '@/components/animations/ScrollReveal';
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-900 text-gray-900 dark:text-white overflow-x-hidden transition-colors duration-300">
       <Header />
       <Hero />
-      <WorkProcess />
-      <Services />
-      <AIFlowchart />
-      <Features />
-      <CaseStudies />
-      <Blog />
-      <FAQ />
-      <Team />
-      <CTA />
+
+      <ScrollReveal direction="up" delay={0.1}>
+        <WorkProcess />
+      </ScrollReveal>
+
+      <ScrollReveal direction="left" delay={0.2}>
+        <Services />
+      </ScrollReveal>
+
+      <ScrollReveal direction="right" delay={0.1}>
+        <AIFlowchart />
+      </ScrollReveal>
+
+      <ScrollReveal direction="down" delay={0.2}>
+        <Features />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up" delay={0.1}>
+        <CaseStudies />
+      </ScrollReveal>
+
+      <ScrollReveal direction="left" delay={0.2}>
+        <Blog />
+      </ScrollReveal>
+
+      <ScrollReveal direction="right" delay={0.1}>
+        <FAQ />
+      </ScrollReveal>
+
+      <ScrollReveal direction="down" delay={0.2}>
+        <Team />
+      </ScrollReveal>
+
+      <ScrollReveal direction="up" delay={0.1}>
+        <CTA />
+      </ScrollReveal>
     </div>
   );
 }

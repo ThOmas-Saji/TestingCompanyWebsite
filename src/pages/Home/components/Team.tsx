@@ -1,3 +1,5 @@
+import Card3DTilt from '@/components/animations/Card3DTilt';
+
 export function Team() {
   const teamMembers = [
     {
@@ -41,27 +43,33 @@ export function Team() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {teamMembers.map((member, index) => (
             <div key={index} className="relative group">
-              {/* Square Card Container */}
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-300 group-hover:scale-105">
-                {/* Background Image */}
-                <div
-                  className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                  style={{ backgroundImage: `url(${member.image})` }}
-                >
-                  {/* Gradient Overlay for better text readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                </div>
+              {/* 3D Tilt Card Container */}
+              <Card3DTilt
+                className="w-full aspect-square"
+                intensity={10}
+                perspective={1000}
+              >
+                <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-300">
+                  {/* Background Image */}
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{ backgroundImage: `url(${member.image})` }}
+                  >
+                    {/* Gradient Overlay for better text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  </div>
 
-                {/* Content positioned at bottom center */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-                  <h4 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">
-                    {member.name}
-                  </h4>
-                  <div className="text-emerald-300 text-xl font-semibold drop-shadow-lg">
-                    {member.role}
+                  {/* Content positioned at bottom center */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
+                    <h4 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">
+                      {member.name}
+                    </h4>
+                    <div className="text-emerald-300 text-xl font-semibold drop-shadow-lg">
+                      {member.role}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Card3DTilt>
 
               {/* Bio text below the card */}
               <div className="mt-6 text-center">

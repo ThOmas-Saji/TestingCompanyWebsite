@@ -1,3 +1,4 @@
+import Reveal from '@/components/animations/Reveal';
 import { Button } from '../../../components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -146,12 +147,15 @@ function AnimatedText() {
   return (
     <div className="space-y-2">
       <motion.h1
-        className="text-5xl lg:text-6xl font-bold leading-tight text-white"
+        className="font-bold leading-tight text-white"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        Transforming Businesses through
+        <Reveal
+          text="Transforming Businesses through"
+          className="text-5xl lg:text-6xl font-bold leading-tight text-white"
+        />
       </motion.h1>
 
       <div className="relative h-[6rem] lg:h-[7rem] xl:h-[8rem] overflow-hidden">

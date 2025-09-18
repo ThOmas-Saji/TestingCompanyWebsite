@@ -186,7 +186,7 @@ const ImpactCard = React.memo(
                 backdrop-blur-md border rounded-2xl p-6 text-center transition-all duration-300 
                 hover:-translate-y-1.5 hover:scale-105 hover:shadow-2xl
                 ${colorClasses[color]}
-                ${isDark ? 'bg-slate-800/80 hover:bg-slate-700/80 hover:border-slate-500/60' : 'bg-white/80 hover:bg-gray-50/80 hover:border-gray-300/60'}
+                ${isDark ? 'bg-slate-800/80 hover:bg-slate-700/80 hover:border-slate-500/60' : 'bg-white/80 hover:bg-gray-50/80 hover:border-gray-300/60 border-gray-400'}
             `}
       >
         <div
@@ -282,7 +282,7 @@ export default function AIFlowchart() {
           <div
             className={`border backdrop-blur-xl rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl relative ${
               isDark
-                ? 'bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-gray-400 hover:shadow-blue-500/30'
+                ? 'bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-gray-700 hover:shadow-blue-500/30'
                 : 'bg-gradient-to-br from-blue-100/50 to-purple-100/50  hover:shadow-blue-500/20 border-gray-400'
             }`}
           >
@@ -319,7 +319,7 @@ export default function AIFlowchart() {
           <div
             className={`border backdrop-blur-xl rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl relative ${
               isDark
-                ? 'bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-gray-400 hover:shadow-purple-500/30'
+                ? 'bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-gray-700 hover:shadow-purple-500/30'
                 : 'bg-gradient-to-br from-purple-100/50 to-violet-100/50 border-gray-400 hover:shadow-purple-500/20'
             }`}
           >
