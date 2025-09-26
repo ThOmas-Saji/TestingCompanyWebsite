@@ -1,3 +1,4 @@
+import Reveal from '@/components/animations/Reveal';
 import { Button } from '../../../components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -51,7 +52,7 @@ export function Hero() {
 
             {/* Description */}
             <motion.p
-              className="text-md lg:text-lg text-white/90 leading-relaxed max-w-2xl mx-auto"
+              className="text-md lg:text-xl text-white/90 leading-relaxed max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: 'easeOut' }}
@@ -145,14 +146,16 @@ function AnimatedText() {
 
   return (
     <div className="space-y-2">
-      <motion.h1
-        className="text-5xl lg:text-6xl font-bold leading-tight text-white"
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: 'easeOut' }}
       >
-        Transforming Businesses through
-      </motion.h1>
+        <Reveal
+          text="Transforming Businesses through"
+          className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white"
+        />
+      </motion.div>
 
       <div className="relative h-[6rem] lg:h-[7rem] xl:h-[8rem] overflow-hidden">
         <AnimatePresence mode="wait">
@@ -168,7 +171,7 @@ function AnimatedText() {
               stiffness: 100,
               damping: 15,
             }}
-            className="absolute w-full h-full text-5xl lg:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400"
+            className="absolute w-full h-full text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400"
           >
             {texts[index]}
           </motion.h2>

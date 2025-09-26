@@ -45,13 +45,13 @@ export function FAQ() {
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
           <div>
-            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-5">
+            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-lg font-semibold uppercase tracking-wide mb-5">
               FAQ
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-10 text-gray-900 dark:text-white">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">
+            <p className="text-xl text-gray-600 dark:text-zinc-400 leading-relaxed mb-8">
               Find answers to common questions about our AI and data
               transformation services, implementation process, and how we can
               help your business.
@@ -88,11 +88,11 @@ export function FAQ() {
                 </button>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    activeIndex === index ? 'max-h-48 pb-8' : 'max-h-0'
+                    activeIndex === index ? 'pb-8' : 'max-h-0'
                   }`}
                 >
                   <div className="pl-16">
-                    <p className="text-gray-600 dark:text-zinc-400 leading-relaxed">
+                    <p className="text-gray-600 dark:text-zinc-400 leading-relaxed text-xl">
                       {faq.answer}
                     </p>
                   </div>

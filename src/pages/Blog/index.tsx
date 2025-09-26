@@ -116,13 +116,13 @@ export function Blog() {
       <div className="max-w-7xl mx-auto px-10">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div>
-            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-sm font-semibold uppercase tracking-wide mb-5">
+            <div className="inline-block bg-purple-500/10 text-emerald-400 px-5 py-2 rounded-full text-lg font-semibold uppercase tracking-wide mb-5">
               Recent Blog
             </div>
             <h2 className="text-4xl lg:text-6xl font-bold leading-tight mb-8 text-gray-900 dark:text-white">
               Updated Journal
             </h2>
-            <p className="text-lg text-gray-600 dark:text-zinc-400 leading-relaxed mb-10">
+            <p className="text-xl text-gray-600 dark:text-zinc-400 leading-relaxed mb-10">
               Stay updated with the latest trends, insights, and innovations in
               AI, data science, and digital transformation from our experts.
             </p>
@@ -156,7 +156,7 @@ export function Blog() {
                   )}
                 </div>
                 <div className="p-8">
-                  <div className="flex gap-4 text-sm text-gray-600 dark:text-zinc-400 mb-4">
+                  <div className="flex gap-4 text-xl text-gray-600 dark:text-zinc-400 mb-4">
                     <span>{article.category}</span>
                     <span>{article.date}</span>
                   </div>
