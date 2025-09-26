@@ -4,19 +4,19 @@ export function WorkProcess() {
       title: 'AI Strategy',
       description:
         'Strategic advisory services to define your data and AI roadmap, enabling data-driven decision making and helping scale your AI practice.',
-      image: '/src/assets/images/WIP/ai-strategy.webp',
+      image: '/assets/images/WIP/ai-strategy.webp',
     },
     {
       title: 'Development',
       description:
         'Machine learning, forecasting, recommendation engines, reinforcement learning, computer vision, NLP, and complete model governance with MLOps.',
-      image: '/src/assets/images/WIP/Development.webp',
+      image: '/assets/images/WIP/Development.webp',
     },
     {
       title: 'Implementation',
       description:
         'Data modeling, warehousing, data lakes, ETL pipelines, cloud data solutions, governance, visualization, and conversational BI platforms.',
-      image: '/src/assets/images/WIP/deployment.webp',
+      image: '/assets/images/WIP/deployment.webp',
     },
   ];
 

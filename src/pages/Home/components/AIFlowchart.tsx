@@ -161,17 +161,17 @@ export default function AIFlowchart() {
 
           <div className="grid grid-cols-1 gap-2 mb-4">
             <IconItem
-              icon="/src/assets/svg/AiChart/collaboration.svg"
+              icon="/assets/svg/AiChart/collaboration.svg"
               label="Collaboration"
               isDark={isDark}
             />
             <IconItem
-              icon="/src/assets/svg/AiChart/ai-expert.svg"
+              icon="/assets/svg/AiChart/ai-expert.svg"
               label="AI Experts"
               isDark={isDark}
             />
             <IconItem
-              icon="/src/assets/svg/AiChart/excellence.svg"
+              icon="/assets/svg/AiChart/excellence.svg"
               label="Excellence"
               isDark={isDark}
             />
@@ -235,7 +235,7 @@ export default function AIFlowchart() {
 
             <div className="relative z-10">
               <img
-                src="/src/assets/images/AiChart/solution-dev.webp"
+                src="/assets/images/AiChart/solution-dev.webp"
                 alt="Solutions Development"
                 className={`w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mx-auto -mt-8 sm:-mt-10 lg:-mt-14`}
               />
@@ -326,25 +326,25 @@ export default function AIFlowchart() {
 
           <div className="grid gap-3">
             <ImpactCard
-              svgIcon="/src/assets/svg/AiChart/fastergtm.svg"
+              svgIcon="/assets/svg/AiChart/fastergtm.svg"
               title="Faster GTM"
               color="green"
               isDark={isDark}
             />
             <ImpactCard
-              svgIcon="/src/assets/svg/AiChart/revenue-uppick.svg"
+              svgIcon="/assets/svg/AiChart/revenue-uppick.svg"
               title="Revenue uptick"
               color="orange"
               isDark={isDark}
             />
             <ImpactCard
-              svgIcon="/src/assets/svg/AiChart/cost-reduction.svg"
+              svgIcon="/assets/svg/AiChart/cost-reduction.svg"
               title="Cost reduction"
               color="purple"
               isDark={isDark}
             />
             <ImpactCard
-              svgIcon="/src/assets/svg/AiChart/improved-ui.svg"
+              svgIcon="/assets/svg/AiChart/improved-ui.svg"
               title="Improved end-user experience"
               color="blue"
               isDark={isDark}
