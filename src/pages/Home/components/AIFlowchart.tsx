@@ -6,59 +6,6 @@ interface ProgressCardProps {
   label: string;
 }
 
-// SVG Icons for Impact Cards
-const ClockIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <circle cx="12" cy="12" r="10" />
-    <polyline points="12,6 12,12 16,14" />
-  </svg>
-);
-
-const DollarIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <line x1="12" y1="1" x2="12" y2="23" />
-    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-  </svg>
-);
-
-const ShieldIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    <path d="M9 12l2 2 4-4" />
-  </svg>
-);
-
-const TrendingUpIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <polyline points="23,6 13.5,15.5 8.5,10.5 1,18" />
-    <polyline points="17,6 23,6 23,12" />
-  </svg>
-);
-
 const ArrowIcon = ({ className }: { className?: string }) => (
   <svg
     className={className}
@@ -92,7 +39,7 @@ const ProgressCard = React.memo(({ color, label }: ProgressCardProps) => {
 
   return (
     <div
-      className={`mb-4 p-4 rounded-xl border ${colorClasses[color]} transition-all duration-300 hover:scale-105 hover:shadow-lg`}
+      className={`mb-3 p-3 rounded-xl border ${colorClasses[color]} transition-all duration-300 hover:scale-105 hover:shadow-lg`}
     >
       <div
         className={`text-lg font-semibold text-center ${textColorClasses[color]}`}
@@ -121,9 +68,10 @@ const IconItem = React.memo(
           : 'bg-white/80 border-gray-200/50 hover:bg-gray-50/80 hover:border-gray-300/60'
       }`}
     >
-      <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-xl text-white transition-all duration-300 hover:scale-110 hover:brightness-125">
-        {icon}
+      <div className={`p-2 rounded-lg ${isDark ? 'bg-gray-200' : ''}`}>
+        {icon && <img src={icon} alt={label} className={`w-8 h-8`} />}
       </div>
+
       <div
         className={`text-lg text-center font-semibold ${
           isDark ? 'text-white' : 'text-gray-900'
@@ -154,45 +102,26 @@ TechTag.displayName = 'TechTag';
 const ImpactCard = React.memo(
   ({
     icon,
+    svgIcon,
     title,
-    color,
     isDark,
   }: {
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
+    svgIcon?: string;
     title: string;
     color: 'green' | 'orange' | 'purple' | 'blue';
     isDark: boolean;
   }) => {
-    const colorClasses = {
-      green:
-        'border-emerald-500/40 hover:shadow-emerald-500/20 from-emerald-500 to-emerald-400',
-      orange:
-        'border-amber-500/40 hover:shadow-amber-500/20 from-amber-500 to-amber-400',
-      purple:
-        'border-purple-500/40 hover:shadow-purple-500/20 from-purple-500 to-pink-500',
-      blue: 'border-blue-500/40 hover:shadow-blue-500/20 from-blue-500 to-blue-400',
-    } as const;
-
-    const gradientClasses = {
-      green: 'from-emerald-500 to-emerald-400',
-      orange: 'from-amber-500 to-amber-400',
-      purple: 'from-purple-500 to-pink-500',
-      blue: 'from-blue-500 to-blue-400',
-    } as const;
-
     return (
       <div
         className={`
-                backdrop-blur-md border rounded-2xl p-6 text-center transition-all duration-300 
-                hover:-translate-y-1.5 hover:scale-105 hover:shadow-2xl
-                ${colorClasses[color]}
-                ${isDark ? 'bg-slate-800/80 hover:bg-slate-700/80 hover:border-slate-500/60' : 'bg-white/80 hover:bg-gray-50/80 hover:border-gray-300/60 border-gray-400'}
-            `}
+                backdrop-blur-md border rounded-2xl p-4 text-center transition-all duration-300 hover:-translate-y-1.5 hover:scale-105 hover:shadow-2xl border-gray-500`}
       >
         <div
-          className={`w-11 h-11 rounded-xl bg-gradient-to-br ${gradientClasses[color]} flex items-center justify-center text-white mx-auto mb-3 transition-all duration-300 hover:scale-110 hover:rotate-6 hover:brightness-125`}
+          className={`w-10 h-10 rounded-xl flex items-center justify-center text-white mx-auto mb-2 transition-all duration-300 hover:scale-110 hover:rotate-6 hover:brightness-125  ${isDark ? 'bg-gray-200' : ''}`}
         >
-          {icon}
+          {svgIcon && <img src={svgIcon} alt={title} className="w-6 h-6" />}
+          {icon && icon}
         </div>
         <div
           className={`text-xl font-semibold leading-tight ${
@@ -213,15 +142,15 @@ export default function AIFlowchart() {
 
   return (
     <section
-      className={`min-h-screen p-15 overflow-x-hidden transition-colors duration-300 relative ${
+      className={`min-h-screen py-8 px-4 overflow-x-hidden transition-colors duration-300 relative ${
         isDark
           ? 'bg-gradient-to-br from-slate-900 via-purple-900/50 to-indigo-900'
           : 'bg-gradient-to-br from-gray-200 via-blue-50/50 to-indigo-50'
       }`}
     >
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 sm:gap-20 items-start py-16 px-10 sm:px-0 relative">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start py-8 px-4 relative">
         {/* Strategic Partnership Column */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 max-w-sm mx-auto lg:mx-0">
           <div
             className={`text-xl font-bold tracking-widest uppercase text-center mb-4 ${
               isDark ? 'text-white' : 'text-black'
@@ -230,21 +159,33 @@ export default function AIFlowchart() {
             Strategic Partnership
           </div>
 
-          <div className="grid grid-cols-1 gap-2 mb-6">
-            <IconItem icon="🤝" label="Collaboration" isDark={isDark} />
-            <IconItem icon="🧠" label="AI Experts" isDark={isDark} />
-            <IconItem icon="⭐" label="Excellence" isDark={isDark} />
+          <div className="grid grid-cols-1 gap-2 mb-4">
+            <IconItem
+              icon="/src/assets/svg/AiChart/collaboration.svg"
+              label="Collaboration"
+              isDark={isDark}
+            />
+            <IconItem
+              icon="/src/assets/svg/AiChart/ai-expert.svg"
+              label="AI Experts"
+              isDark={isDark}
+            />
+            <IconItem
+              icon="/src/assets/svg/AiChart/excellence.svg"
+              label="Excellence"
+              isDark={isDark}
+            />
           </div>
 
           <div
-            className={`backdrop-blur-xl border border-gray-400 rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl ${
+            className={`backdrop-blur-xl border border-gray-400 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl ${
               isDark
                 ? 'bg-slate-800/80 border-slate-600/50 hover:bg-slate-700/80 hover:border-slate-500/60 hover:shadow-purple-500/20'
                 : 'bg-white/80 border-gray-200/50 hover:bg-gray-50/80 hover:border-gray-300/60 hover:shadow-purple-500/20'
             }`}
           >
             <h3
-              className={`text-xl font-bold mb-6 text-center ${
+              className={`text-xl font-bold mb-4 text-center ${
                 isDark ? 'text-white' : 'text-gray-900'
               }`}
             >
@@ -270,7 +211,7 @@ export default function AIFlowchart() {
         </div>
 
         {/* Solutions Development Column */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 max-w-sm mx-auto lg:mx-0">
           <div
             className={`text-xl font-bold tracking-widest uppercase text-center mb-4 ${
               isDark ? 'text-white' : 'text-black'
@@ -280,7 +221,7 @@ export default function AIFlowchart() {
           </div>
 
           <div
-            className={`border backdrop-blur-xl rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl relative ${
+            className={`border backdrop-blur-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl relative ${
               isDark
                 ? 'bg-gradient-to-br from-blue-500/10 to-purple-500/10 border-gray-700 hover:shadow-blue-500/30'
                 : 'bg-gradient-to-br from-blue-100/50 to-purple-100/50  hover:shadow-blue-500/20 border-gray-400'
@@ -291,33 +232,35 @@ export default function AIFlowchart() {
                 isDark ? 'bg-slate-800/60' : 'bg-white/60'
               }`}
             ></div>
-            <div className="relative z-10">
-              <div
-                className={`w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center text-4xl ${
-                  isDark ? 'bg-white' : 'bg-gray-100'
-                }`}
-              >
-                💻
-              </div>
-              <h3
-                className={`text-xl font-bold mb-6 text-center ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}
-              >
-                Solutions Development
-              </h3>
 
-              <div className="flex justify-center gap-3 flex-wrap">
-                <TechTag isDark={isDark}>Data engineering</TechTag>
-                <TechTag isDark={isDark}>Analytics and AI </TechTag>
-                <TechTag isDark={isDark}>Gen AI and Agentic AI</TechTag>
-                <TechTag isDark={isDark}>Product engineering</TechTag>
+            <div className="relative z-10">
+              <img
+                src="/src/assets/images/AiChart/solution-dev.webp"
+                alt="Solutions Development"
+                className={`w-32 h-32 sm:w-40 sm:h-40 lg:w-48 lg:h-48 mx-auto -mt-8 sm:-mt-10 lg:-mt-14`}
+              />
+
+              <div className="-mt-4 sm:-mt-5 lg:-mt-6">
+                <h3
+                  className={`text-xl font-bold mb-4 text-center ${
+                    isDark ? 'text-white' : 'text-gray-900'
+                  }`}
+                >
+                  Solutions Development
+                </h3>
+
+                <div className="flex justify-center gap-3 flex-wrap">
+                  <TechTag isDark={isDark}>Data engineering</TechTag>
+                  <TechTag isDark={isDark}>Analytics and AI </TechTag>
+                  <TechTag isDark={isDark}>Gen AI and Agentic AI</TechTag>
+                  <TechTag isDark={isDark}>Product engineering</TechTag>
+                </div>
               </div>
             </div>
           </div>
 
           <div
-            className={`border backdrop-blur-xl rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl relative ${
+            className={`border backdrop-blur-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 hover:scale-105 hover:shadow-2xl relative ${
               isDark
                 ? 'bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-gray-700 hover:shadow-purple-500/30'
                 : 'bg-gradient-to-br from-purple-100/50 to-violet-100/50 border-gray-400 hover:shadow-purple-500/20'
@@ -329,7 +272,7 @@ export default function AIFlowchart() {
               }`}
             ></div>
             <div className="relative z-10">
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 <div
                   className={`p-3.5 rounded-2xl text-lg font-medium text-center transition-all duration-300 hover:translate-x-1 ${
                     isDark
@@ -372,7 +315,7 @@ export default function AIFlowchart() {
         </div>
 
         {/* Measurable Business Impact Column */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4 max-w-sm mx-auto lg:mx-0">
           <div
             className={`text-xl font-bold tracking-widest uppercase text-center mb-4 ${
               isDark ? 'text-white' : 'text-black'
@@ -381,27 +324,27 @@ export default function AIFlowchart() {
             Measurable Business Impact
           </div>
 
-          <div className="grid gap-4">
+          <div className="grid gap-3">
             <ImpactCard
-              icon={<ClockIcon className="w-6 h-6" />}
+              svgIcon="/src/assets/svg/AiChart/fastergtm.svg"
               title="Faster GTM"
               color="green"
               isDark={isDark}
             />
             <ImpactCard
-              icon={<TrendingUpIcon className="w-6 h-6" />}
+              svgIcon="/src/assets/svg/AiChart/revenue-uppick.svg"
               title="Revenue uptick"
               color="orange"
               isDark={isDark}
             />
             <ImpactCard
-              icon={<DollarIcon className="w-6 h-6" />}
+              svgIcon="/src/assets/svg/AiChart/cost-reduction.svg"
               title="Cost reduction"
               color="purple"
               isDark={isDark}
             />
             <ImpactCard
-              icon={<ShieldIcon className="w-6 h-6" />}
+              svgIcon="/src/assets/svg/AiChart/improved-ui.svg"
               title="Improved end-user experience"
               color="blue"
               isDark={isDark}

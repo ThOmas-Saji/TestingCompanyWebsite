@@ -88,7 +88,7 @@ export function FAQ() {
                 </button>
                 <div
                   className={`overflow-hidden transition-all duration-300 ${
-                    activeIndex === index ? 'max-h-48 pb-8' : 'max-h-0'
+                    activeIndex === index ? 'pb-8' : 'max-h-0'
                   }`}
                 >
                   <div className="pl-16">

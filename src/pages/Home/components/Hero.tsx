@@ -153,7 +153,7 @@ function AnimatedText() {
       >
         <Reveal
           text="Transforming Businesses through"
-          className="text-5xl lg:text-6xl font-bold leading-tight text-white"
+          className="text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white"
         />
       </motion.div>
 
@@ -171,7 +171,7 @@ function AnimatedText() {
               stiffness: 100,
               damping: 15,
             }}
-            className="absolute w-full h-full text-5xl lg:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400"
+            className="absolute w-full h-full text-3xl sm:text-5xl lg:text-6xl font-bold leading-tight text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400"
           >
             {texts[index]}
           </motion.h2>

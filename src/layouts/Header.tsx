@@ -63,7 +63,7 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-10 flex justify-between items-center">
           <Link onClick={() => scrollToSection('home')} to="/">
             <img
-              src={'https://www.ylogx.io/assets/imgs/logo.png'}
+              src={'/src/assets/svg/ylogxLogo.svg'}
               alt="YlogX"
               className="w-full h-12"
             />

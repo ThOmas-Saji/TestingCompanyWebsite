@@ -1,5 +1,6 @@
 import { motion, type Variants } from 'framer-motion';
 import { type ReactNode } from 'react';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 interface ScrollRevealProps {
   children: ReactNode;
@@ -79,6 +80,7 @@ export default function ScrollReveal({
   distance = 50,
   once = true,
 }: ScrollRevealProps) {
+  const isMobile = useIsMobile();
   const variants = slideVariants[direction];
 
   // Override distance if custom distance is provided
@@ -120,7 +122,7 @@ export default function ScrollReveal({
       viewport={{
         once,
         amount: 0.1,
-        margin: '-150px',
+        margin: isMobile ? '-10px' : '-150px',
       }}
     >
       {children}
