@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 const texts = [
   'Data Driven Decision Making',
-  'Powered By Analytics and Decision Sciences',
+  'Analytics and Decision Sciences',
   'AI powered Automation',
   'Gen AI Centric Productivity Improvement',
   'Agentic AI Based Excellence',

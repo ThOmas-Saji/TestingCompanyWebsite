@@ -27,7 +27,7 @@ export function WorkProcess() {
           Processing
         </div>
         <h2 className="text-4xl lg:text-6xl font-bold mb-8 text-gray-900 dark:text-white">
-          Co-Creating the Future With Yo
+          Co-Creating the Future With You
         </h2>
         <p className="text-xl text-gray-600 dark:text-zinc-400 leading-relaxed max-w-3xl mx-auto mb-2">
           Comprehensive AI and data solutions designed to transform your
