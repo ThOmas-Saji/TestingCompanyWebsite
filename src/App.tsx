@@ -7,8 +7,15 @@ import { Services } from './pages/Home/components/Services';
 import { Team } from './pages/Home/components/Team';
 import { CTA } from './pages/Home/components/CTA';
 import Blogs from './pages/Blog/blogs';
+import { clarity } from 'react-microsoft-clarity';
+import { useEffect } from 'react';
+
+const clarityId = import.meta.env.VITE_CLARITY_ID;
 
 function App() {
+  useEffect(() => {
+    clarity.init(clarityId);
+  }, []);
   return (
     <ThemeProvider>
       <Router>
