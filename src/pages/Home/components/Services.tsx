@@ -1,5 +1,5 @@
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// import { ArrowRight } from 'lucide-react';
+// import { Link } from 'react-router-dom';
 
 export function Services() {
   const services = [
@@ -28,12 +28,12 @@ export function Services() {
               generation of AI products, platforms and solutions from a hybrid
               perspective.
             </p>
-            <Link
+            {/* <Link
               to="#"
               className="inline-flex items-center gap-3 text-emerald-400 font-semibold hover:gap-4 transition-all"
             >
               View All Services <ArrowRight className="w-4 h-4" />
-            </Link>
+            </Link> */}
           </div>
 
           <div>
@@ -51,7 +51,7 @@ export function Services() {
                       {service.name}
                     </span>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-gray-600 dark:text-zinc-400 group-hover:text-emerald-400 group-hover:translate-x-2 transition-all" />
+                  {/* <ArrowRight className="w-5 h-5 text-gray-600 dark:text-zinc-400 group-hover:text-emerald-400 group-hover:translate-x-2 transition-all" /> */}
                 </li>
               ))}
             </ul>

@@ -2,6 +2,8 @@ import Reveal from '@/components/animations/Reveal';
 import { Button } from '../../../components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
+import HeroLightImg from '/assets/images/Hero/hero-light.webp';
 
 const texts = [
   'Data Driven Decision Making',
@@ -12,6 +14,9 @@ const texts = [
 ];
 
 export function Hero() {
+  const { theme } = useTheme();
+  const isDark = theme === 'dark';
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -27,12 +32,16 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
-          src={'https://www.ylogx.io/assets/imgs/home/header.png'}
+          src={
+            isDark
+              ? 'https://www.ylogx.io/assets/imgs/home/header.png'
+              : HeroLightImg
+          }
           alt="AI and Data Analytics Background"
-          className="w-1/2 h-full object-cover right-0 absolute"
+          className="w-1/2 h-full object-cover right-0 absolute z-[1] opacity-50"
         />
         {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/80 dark:bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/90 dark:bg-black/60"></div>
       </div>
 
       {/* Content */}
@@ -77,13 +86,13 @@ export function Hero() {
               >
                 Get Started
               </Button>
-              <Button
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="px-10 py-4 text-lg font-semibold rounded-lg border-2 border-white/30 text-white hover:border-white hover:bg-white/10 transition-all duration-300 min-w-[200px]"
               >
                 Learn More
-              </Button>
+              </Button> */}
             </motion.div>
 
             {/* Floating decorative elements */}

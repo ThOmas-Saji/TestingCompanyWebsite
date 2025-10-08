@@ -273,7 +273,7 @@ export default function Blogs() {
                   blog.description !== 'No description available' ? (
                     <div
                       dangerouslySetInnerHTML={{ __html: blog.description }}
-                      className="prose prose-sm dark:prose-invert max-w-none line-clamp-3 prose-p:mb-2 prose-p:last:mb-0 prose-img:rounded-lg prose-img:max-w-full prose-img:h-auto"
+                      className="prose prose-sm dark:prose-invert max-w-none line-clamp-3 prose-p:mb-2 prose-p:last:mb-0 prose-img:rounded-lg prose-img:max-w-full prose-img:max-h-72 prose-img:mx-auto"
                     />
                   ) : (
                     <p className="text-gray-500 dark:text-gray-400 italic">

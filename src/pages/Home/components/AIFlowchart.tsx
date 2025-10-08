@@ -1,26 +1,12 @@
 import React from 'react';
 import { useTheme } from '@/contexts/ThemeContext';
+import LeftRightArrowIcon from '@/components/icons-component/LeftRightArrowIcon';
+import ArrowIcon from '@/components/icons-component/ArrowIcon';
 
 interface ProgressCardProps {
   color: 'green' | 'orange' | 'blue' | 'purple';
   label: string;
 }
-
-const ArrowIcon = ({ className }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-  >
-    <path
-      d="M5 12H19M19 12L12 5M19 12L12 19"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-  </svg>
-);
 
 const ProgressCard = React.memo(({ color, label }: ProgressCardProps) => {
   const colorClasses = {
@@ -56,20 +42,30 @@ const IconItem = React.memo(
     icon,
     label,
     isDark,
+    className,
+    svgClassName,
+    svgBg,
   }: {
     icon: string;
     label: string;
     isDark: boolean;
+    className?: string;
+    svgClassName?: string;
+    svgBg?: boolean;
   }) => (
     <div
       className={`flex flex-col items-center gap-2 p-2 rounded-2xl backdrop-blur-md border border-gray-400 transition-all duration-300 hover:transform hover:-translate-y-1 hover:scale-105 hover:shadow-2xl ${
         isDark
           ? 'bg-slate-800/80 border-slate-600/50 hover:bg-slate-700/80 hover:border-slate-500/60'
           : 'bg-white/80 border-gray-200/50 hover:bg-gray-50/80 hover:border-gray-300/60'
-      }`}
+      } ${className}`}
     >
-      <div className={`p-2 rounded-lg ${isDark ? 'bg-gray-200' : ''}`}>
-        {icon && <img src={icon} alt={label} className={`w-6 h-6`} />}
+      <div
+        className={`p-2 rounded-lg ${isDark && !svgBg ? 'bg-gray-200' : ''}`}
+      >
+        {icon && (
+          <img src={icon} alt={label} className={`w-4 h-4 ${svgClassName}`} />
+        )}
       </div>
 
       <div
@@ -166,22 +162,41 @@ export default function AIFlowchart() {
         <div className="flex flex-col gap-4 max-w-sm mx-auto lg:mx-0">
           <MainTitle title="Strategic Partnership" isDark={isDark} />
 
-          <div className="grid grid-cols-1 gap-2 mb-4">
-            <IconItem
-              icon="/assets/svg/AiChart/collaboration.svg"
-              label="Collaboration"
-              isDark={isDark}
-            />
-            <IconItem
-              icon="/assets/svg/AiChart/ai-expert.svg"
-              label="AI Experts"
-              isDark={isDark}
-            />
-            <IconItem
-              icon="/assets/svg/AiChart/excellence.svg"
-              label="Excellence"
-              isDark={isDark}
-            />
+          <div
+            className={`mb-8 p-4 rounded-3xl border ${
+              isDark
+                ? 'bg-slate-800/80 border-slate-600/50'
+                : 'bg-white/80 border-gray-400'
+            }`}
+          >
+            <div className="flex items-center justify-center mb-2">
+              <IconItem
+                icon="/assets/svg/AiChart/collaboration.svg"
+                label="Collaboration"
+                isDark={isDark}
+                className="w-40"
+              />
+            </div>
+
+            <div className="grid grid-cols-3 gap-2">
+              <IconItem
+                icon="/assets/svg/AiChart/client.svg"
+                label="Client Team"
+                isDark={isDark}
+                className="flex items-center justify-center"
+              />
+              <div className="flex flex-col items-center justify-center">
+                <LeftRightArrowIcon isDark={isDark} />
+              </div>
+              <IconItem
+                icon="/assets/svg/ylogxLogo.svg"
+                label=""
+                isDark={isDark}
+                className="flex items-center justify-center "
+                svgClassName="!w-14 !h-14"
+                svgBg
+              />
+            </div>
           </div>
 
           <div
@@ -191,13 +206,6 @@ export default function AIFlowchart() {
                 : 'bg-white/80 border-gray-200/50 hover:bg-gray-50/80 hover:border-gray-300/60 hover:shadow-purple-500/20'
             }`}
           >
-            <h3
-              className={`text-lg font-bold mb-4 text-center ${
-                isDark ? 'text-white' : 'text-gray-900'
-              }`}
-            >
-              Strategic Planning
-            </h3>
             <ProgressCard
               color="green"
               label="Business goals and ROI Planning"
@@ -299,7 +307,7 @@ export default function AIFlowchart() {
                       : 'bg-gray-100/80 border border-gray-400 text-gray-900 hover:bg-gray-200/80 hover:border-gray-400/70'
                   }`}
                 >
-                  YlogX Solution Accelerates
+                  YlogX Solution Accelerator
                 </div>
               </div>
             </div>
@@ -319,7 +327,7 @@ export default function AIFlowchart() {
         <div className="flex flex-col gap-4 max-w-sm mx-auto lg:mx-0">
           <MainTitle title="Measurable Business Impact" isDark={isDark} />
 
-          <div className="grid gap-8">
+          <div className="grid gap-10">
             <ImpactCard
               svgIcon="/assets/svg/AiChart/fastergtm.svg"
               title="Faster GTM"

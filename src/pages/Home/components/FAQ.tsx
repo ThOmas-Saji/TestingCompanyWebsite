@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { Plus, Minus, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 export function FAQ() {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const faqs = [
     {
@@ -56,12 +64,12 @@ export function FAQ() {
               transformation services, implementation process, and how we can
               help your business.
             </p>
-            <Link
-              to="#contact"
+            <Button
+              onClick={() => scrollToSection('contact')}
               className="inline-flex items-center gap-3 text-emerald-400 font-semibold hover:gap-4 transition-all"
             >
               Get in Touch <ArrowRight className="w-4 h-4" />
-            </Link>
+            </Button>
           </div>
 
           <div className="space-y-0">
